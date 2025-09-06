@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>訪問看護事業部 行動指針 理解度クイズ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 id="app-title">訪問看護事業部 行動指針 理解度クイズ</h1>
+    <div class="controls">
+      <label class="toggle"><input type="checkbox" id="shuffleToggle" checked> ランダム出題</label>
+      <label class="toggle"><input type="checkbox" id="timerToggle"> タイマー（1問30秒）</label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro">
+      <p>「受講者氏名」を入力して「開始」を押すとクイズが始まります。終了後に正解数・合否と見直しが表示されます。</p>
+      <div class="name-field">
+        <label for="studentName">受講者氏名</label>
+        <input id="studentName" type="text" placeholder="氏名を入力" required />
+      </div>
+      <button id="startBtn" class="primary">開始</button>
+      <div class="import">
+        <label for="fileInput" class="linklike">questions.json を読み込む</label>
+        <input id="fileInput" type="file" accept="application/json" />
+      </div>
+    </section>
+
+    <section id="quiz" class="hidden" aria-live="polite">
+      <div class="status">
+        <div id="progressText">1 / 1</div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div id="timer" class="timer hidden" aria-label="残り時間">--</div>
+      </div>
+
+      <h2 id="questionText"></h2>
+      <form id="answers" class="answers" aria-labelledby="questionText"></form>
+
+      <div class="actions">
+        <button id="submitBtn" class="primary">解答する</button>
+        <button id="nextBtn" class="secondary hidden">次へ ▶</button>
+      </div>
+    </section>
+
+    <section id="result" class="hidden">
+      <h2>結果</h2>
+      <p id="scoreText"></p>
+      <p id="passText" class="pass"></p>
+      <p id="bestText"></p>
+      <details>
+        <summary>解答の見直し</summary>
+        <div id="review"></div>
+      </details>
+      <div class="actions">
+        <button id="certBtn" class="secondary hidden">修了証をPDF保存</button>
+        <button id="retryBtn" class="primary">もう一度</button>
+      </div>
+    </section>
+
+    <section id="certificate" class="certificate hidden" aria-hidden="true">
+      <div class="cert-inner">
+        <h1>受講修了証</h1>
+        <p class="cert-name"><span id="certName"></span> 様</p>
+        <p class="cert-course">あなたは <span id="certCourse"></span> を修了しました。</p>
+        <ul class="cert-details">
+          <li>スコア: <span id="certScore"></span></li>
+          <li>合格日時: <span id="certDate"></span></li>
+          <li>合格基準: <span id="certPassLine"></span></li>
+          <li>証明ID: <span id="certId"></span></li>
+        </ul>
+        <div class="issuer">発行: 株式会社スイッチオンサービス 訪問看護事業部</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>ローカル/ウェブで動作するクイズ。questions.json を変更すると問題を差し替えできます。</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+:root{ --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent-2:#60a5fa; }
+html,body{ height:100%; }
+body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', sans-serif; color:var(--text); background:linear-gradient(180deg,#0b1024, #0f172a 30%);} 
+.app-header{ display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:rgba(17,24,39,.6); backdrop-filter: blur(6px); position:sticky; top:0; z-index:5; border-bottom:1px solid #1f2937;}
+.app-header h1{ margin:0; font-size:1.1rem; }
+.controls{ display:flex; gap:16px; }
+.toggle{ font-size:.9rem; color:var(--muted); }
+.container{ max-width:880px; margin: 24px auto; padding: 24px; }
+#intro, #quiz, #result{ background:rgba(17,24,39,.7); border:1px solid #1f2937; border-radius:16px; padding:24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+.hidden{ display:none; }
+.primary, .secondary{ cursor:pointer; border:none; border-radius:10px; padding:12px 18px; font-weight:600; }
+.primary{ background:linear-gradient(90deg,var(--accent), #10b981); color:#032312; }
+.secondary{ background:#1f2937; color:var(--text); border:1px solid #374151; }
+.linklike{ color:var(--accent-2); cursor:pointer; text-decoration:underline; }
+.import{ margin-top:12px; display:flex; gap:10px; align-items:center; }
+.import input{ display:none; }
+.status{ display:flex; align-items:center; gap:12px; }
+.progress{ flex:1; height:10px; background:#1f2937; border-radius:6px; overflow:hidden; }
+#progressBar{ height:100%; width:0%; background:linear-gradient(90deg,var(--accent-2),#34d399); transition: width .25s ease; }
+.timer{ min-width:84px; text-align:right; font-variant-numeric: tabular-nums; }
+#questionText{ margin: 18px 0; }
+.answers{ display:grid; gap:10px; }
+.option{ display:flex; gap:10px; align-items:flex-start; padding:12px; border:1px solid #243041; background:#0b1220; border-radius:12px; cursor:pointer; }
+.option.correct{ border-color: #0e7a3f; background: #062217; }
+.option.wrong{ border-color: #7a1f1f; background: #220b0b; }
+.explanation{ margin-top:10px; color: var(--muted); white-space: pre-wrap; }
+.pass-pass{ color:#22c55e; font-weight:700; }
+.pass-fail{ color:#ef4444; font-weight:700; }
+
+/* name input */
+.name-field{ margin:16px 0 8px; display:grid; gap:6px; max-width:420px;}
+.name-field input{ padding:10px 12px; border-radius:8px; border:1px solid #374151; background:#0b1220; color:var(--text);} 
+
+/* certificate */
+.certificate{ display:none; padding:0; margin:0; }
+.certificate .cert-inner{ width:210mm; min-height:297mm; background:#fff; color:#111; margin:0 auto; padding:24mm 20mm; border:10px solid #1f2937; box-shadow: 0 10px 30px rgba(0,0,0,.2);} 
+.certificate h1{ text-align:center; font-size:28pt; letter-spacing:2px; margin:0 0 24mm; }
+.certificate .cert-name{ font-size:20pt; text-align:center; margin:0 0 6mm; font-weight:700; }
+.certificate .cert-course{ text-align:center; font-size:12pt; margin:0 0 10mm; }
+.certificate .cert-details{ list-style:none; padding:0; margin:0 0 18mm; font-size:11pt; display:grid; gap:6px;}
+.certificate .issuer{ text-align:right; margin-top:10mm; font-size:10pt;}
+
+@media print { @page { size: A4; margin: 15mm; } header, footer, main{ display:none !important; } #certificate{ display:block !important; } body{ background:#fff !important; } }
+.print-cert header, .print-cert footer, .print-cert main{ display:none !important; }
+.print-cert #certificate{ display:block !important; }
+footer{ text-align:center; color:var(--muted); padding:24px; }
