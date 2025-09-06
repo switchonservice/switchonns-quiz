@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>訪問看護事業部 行動指針 理解度クイズ</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- html2pdf.js CDN (includes html2canvas + jsPDF) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIP2YHh4kKOulvJbT8QeQ8oY2o3Qd2h8tqCafwI9Z9o8/3oY8C25q0oV0KkMqwLz2l5rC4GRlq8P1Z+0L8Ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <header class="app-header">
@@ -50,13 +48,22 @@
       <h2>結果</h2>
       <p id="scoreText"></p>
       <p id="passText" class="pass"></p>
+
+      <div id="passInfo" class="pass-info hidden" role="group" aria-label="合格者用の案内">
+        <h3>訪問看護事業部　行動指針　理解度テスト　修了情報</h3>
+        <ul>
+          <li>受講者氏名：<strong id="passName"></strong></li>
+          <li>合格日時：<strong id="passDate"></strong></li>
+        </ul>
+        <p class="instructions">※ 合格した方は、この画面をスクリーンショットし、管理者へ提出してください。</p>
+      </div>
+
       <p id="bestText"></p>
       <details>
         <summary>解答の見直し</summary>
         <div id="review"></div>
       </details>
       <div class="actions">
-        <button id="certBtn" class="secondary hidden">修了証をPDF保存</button>
         <button id="retryBtn" class="primary">もう一度</button>
       </div>
     </section>

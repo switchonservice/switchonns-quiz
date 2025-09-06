@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-:root{ --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent-2:#60a5fa; }
+:root{ --bg:#0f172a; --panel:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22c55e; --accent-2:#60a5fa; --info:#2563eb; }
 html,body{ height:100%; }
 body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans JP', sans-serif; color:var(--text); background:linear-gradient(180deg,#0b1024, #0f172a 30%);} 
 .app-header{ display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:rgba(17,24,39,.6); backdrop-filter: blur(6px); position:sticky; top:0; z-index:5; border-bottom:1px solid #1f2937;}
@@ -32,7 +32,13 @@ body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 .name-field{ margin:16px 0 8px; display:grid; gap:6px; max-width:420px;}
 .name-field input{ padding:10px 12px; border-radius:8px; border:1px solid #374151; background:#0b1220; color:var(--text);} 
 
-/* certificate */
+/* pass info */
+.pass-info{ margin:16px 0; padding:16px; border:1px solid var(--info); background: rgba(37,99,235,.08); border-radius:12px; }
+.pass-info h3{ margin:0 0 8px; font-size:1rem; color:#93c5fd; }
+.pass-info ul{ margin:0 0 8px; padding-left:18px; }
+.instructions{ margin:0; font-weight:700; }
+
+/* certificate (kept for future use but hidden) */
 .certificate{ display:none; padding:0; margin:0; }
 .certificate .cert-inner{ width:210mm; min-height:297mm; background:#fff; color:#111; margin:0 auto; padding:24mm 20mm; border:10px solid #1f2937; box-shadow: 0 10px 30px rgba(0,0,0,.2);} 
 .certificate h1{ text-align:center; font-size:28pt; letter-spacing:2px; margin:0 0 10mm; }
@@ -43,11 +49,5 @@ body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 .certificate .cert-details{ list-style:none; padding:0; margin:0 0 18mm; font-size:11pt; display:grid; gap:6px;}
 .certificate .issuer{ text-align:right; margin-top:10mm; font-size:10pt;}
 
-/* export-cert: make certificate visible for PDF generation */
-.export-cert #certificate{ display:block !important; }
-.export-cert body{ background:#fff; }
-
 @media print { @page { size: A4; margin: 15mm; } header, footer, main{ display:none !important; } #certificate{ display:block !important; } body{ background:#fff !important; } }
-.print-cert header, .print-cert footer, .print-cert main{ display:none !important; }
-.print-cert #certificate{ display:block !important; }
 footer{ text-align:center; color:var(--muted); padding:24px; }
