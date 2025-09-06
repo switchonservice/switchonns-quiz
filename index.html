@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>訪問看護事業部 行動指針 理解度クイズ</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- html2pdf.js CDN (includes html2canvas + jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIP2YHh4kKOulvJbT8QeQ8oY2o3Qd2h8tqCafwI9Z9o8/3oY8C25q0oV0KkMqwLz2l5rC4GRlq8P1Z+0L8Ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <header class="app-header">
@@ -60,7 +62,7 @@
     </section>
 
     <section id="certificate" class="certificate hidden" aria-hidden="true">
-      <div class="cert-inner">
+      <div class="cert-inner" id="certPaper">
         <h1>受講修了証</h1>
         <p class="cert-name"><span id="certName"></span> 様</p>
         <p id="certStatement" class="cert-statement">訪問看護事業部　行動指針　理解度クイズ　修了しました。</p>
