@@ -35,9 +35,11 @@ body{ margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Robo
 /* certificate */
 .certificate{ display:none; padding:0; margin:0; }
 .certificate .cert-inner{ width:210mm; min-height:297mm; background:#fff; color:#111; margin:0 auto; padding:24mm 20mm; border:10px solid #1f2937; box-shadow: 0 10px 30px rgba(0,0,0,.2);} 
-.certificate h1{ text-align:center; font-size:28pt; letter-spacing:2px; margin:0 0 24mm; }
-.certificate .cert-name{ font-size:20pt; text-align:center; margin:0 0 6mm; font-weight:700; }
+.certificate h1{ text-align:center; font-size:28pt; letter-spacing:2px; margin:0 0 10mm; }
+.certificate .cert-name{ font-size:20pt; text-align:center; margin:0 0 4mm; font-weight:700; }
+.certificate .cert-statement{ text-align:center; font-size:14pt; margin:6mm 0 8mm; }
 .certificate .cert-course{ text-align:center; font-size:12pt; margin:0 0 10mm; }
+.certificate .cert-main-lines{ margin: 0 0 10mm; font-size:12pt; display:grid; gap:4px; }
 .certificate .cert-details{ list-style:none; padding:0; margin:0 0 18mm; font-size:11pt; display:grid; gap:6px;}
 .certificate .issuer{ text-align:right; margin-top:10mm; font-size:10pt;}
 
