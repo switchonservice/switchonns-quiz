@@ -16,10 +16,14 @@
 
   <main class="container">
     <section id="intro">
-      <p>「受講者氏名」を入力して「開始」を押すとクイズが始まります。終了後に正解数・合否と見直しが表示されます。<br>※ 出題順は常に<strong>ランダム</strong>です。</p>
+      <p>「受講者氏名」「所属（任意）」を入力して「開始」を押すとクイズが始まります。終了後に正解数・合否と見直しが表示されます。<br>※ 出題順は常に<strong>ランダム</strong>です。</p>
       <div class="name-field">
         <label for="studentName">受講者氏名</label>
         <input id="studentName" type="text" placeholder="氏名を入力" required />
+      </div>
+      <div class="name-field">
+        <label for="studentOrg">所属（任意）</label>
+        <input id="studentOrg" type="text" placeholder="例：訪問看護事業部 ○○チーム" />
       </div>
       <button id="startBtn" class="primary">開始</button>
       <div class="import">
@@ -53,6 +57,7 @@
         <h3>訪問看護事業部　行動指針　理解度テスト　修了情報</h3>
         <ul>
           <li>受講者氏名：<strong id="passName"></strong></li>
+          <li>所属：<strong id="passOrg"></strong></li>
           <li>合格日時：<strong id="passDate"></strong></li>
         </ul>
         <p class="instructions">※ 合格した方は、この画面をスクリーンショットし、管理者へ提出してください。</p>
@@ -65,26 +70,6 @@
       </details>
       <div class="actions">
         <button id="retryBtn" class="primary">もう一度</button>
-      </div>
-    </section>
-
-    <section id="certificate" class="certificate hidden" aria-hidden="true">
-      <div class="cert-inner" id="certPaper">
-        <h1>受講修了証</h1>
-        <p class="cert-name"><span id="certName"></span> 様</p>
-        <p id="certStatement" class="cert-statement">訪問看護事業部　行動指針　理解度クイズ　修了しました。</p>
-        <p class="cert-course">あなたは <span id="certCourse"></span> を修了しました。</p>
-        <div class="cert-main-lines">
-          <div>受講者氏名：<span id="certNameLine"></span></div>
-          <div>合格日時：<span id="certDateLine"></span></div>
-        </div>
-        <ul class="cert-details">
-          <li>スコア: <span id="certScore"></span></li>
-          <li>合格日時: <span id="certDate"></span></li>
-          <li>合格基準: <span id="certPassLine"></span></li>
-          <li>証明ID: <span id="certId"></span></li>
-        </ul>
-        <div class="issuer">発行: 株式会社スイッチオンサービス 訪問看護事業部</div>
       </div>
     </section>
   </main>
